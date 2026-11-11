@@ -1,0 +1,575 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#17100b">
+<title>Amazon Kakamega Restaurant | Great Food, Anytime</title>
+<meta name="description" content="Visit Amazon Kakamega Restaurant on Canon Awori Street, Kakamega. Delicious food and drinks, open 24 hours. Call or WhatsApp to order.">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+ --dark:#17100b;
+ --brown:#2b1b11;
+ --gold:#e9a441;
+ --cream:#fff8ed;
+ --white:#fff;
+ --muted:#b9aa9c;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+ font-family:'DM Sans',sans-serif;
+ background:var(--cream);
+ color:var(--dark);
+}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer}
+.container{width:min(1150px,91%);margin:auto}
+
+/* NAVIGATION */
+header{
+ position:sticky;top:0;z-index:100;
+ background:rgba(23,16,11,.97);
+ border-bottom:1px solid #ffffff18;
+}
+.nav{
+ height:76px;display:flex;align-items:center;
+ justify-content:space-between;gap:20px;
+}
+.logo{display:flex;align-items:center;gap:10px;color:white}
+.logo-icon{
+ width:43px;height:43px;border-radius:50%;
+ background:var(--gold);color:#24150a;
+ display:grid;place-items:center;font-size:23px;
+}
+.logo strong{font-size:16px;letter-spacing:1px}
+.logo small{display:block;color:var(--gold);font-size:10px;letter-spacing:2px}
+.nav-links{display:flex;gap:27px;color:#eee;font-size:13px}
+.nav-links a:hover{color:var(--gold)}
+.nav-btn{
+ background:var(--gold);padding:12px 19px;
+ border-radius:30px;font-weight:800;font-size:12px;
+ color:#211308;
+}
+
+/* HERO */
+.hero{
+ min-height:620px;display:flex;align-items:center;
+ color:white;position:relative;overflow:hidden;
+ background:
+ linear-gradient(90deg,rgba(20,12,7,.96) 0%,rgba(20,12,7,.78) 48%,rgba(20,12,7,.18) 100%),
+ url('https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=2000&q=90') center/cover;
+}
+.hero-content{max-width:650px;padding:100px 0}
+.eyebrow{
+ color:var(--gold);font-size:12px;
+ font-weight:800;letter-spacing:3px;
+ text-transform:uppercase;margin-bottom:20px;
+}
+.hero h1{
+ font-family:'Playfair Display',serif;
+ font-size:clamp(43px,7vw,76px);
+ line-height:1.08;margin-bottom:22px;
+}
+.hero h1 span{color:var(--gold)}
+.hero p{color:#e1d6cc;line-height:1.8;max-width:490px}
+.hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.btn{
+ display:inline-flex;align-items:center;justify-content:center;
+ padding:15px 24px;border-radius:5px;font-weight:800;
+ font-size:13px;transition:.2s;
+}
+.btn:hover{transform:translateY(-3px)}
+.btn-gold{background:var(--gold);color:#201309}
+.btn-outline{border:1px solid #ffffff85;color:white}
+.hero-note{margin-top:32px;color:#e8d4bc;font-size:12px}
+
+/* INFO BAR */
+.info-bar{background:#2b1b11;color:white;padding:24px 0}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.info-item{display:flex;align-items:center;gap:13px}
+.info-icon{font-size:25px}
+.info-item strong{display:block;font-size:13px}
+.info-item small{color:#c5b4a3;font-size:11px}
+
+/* SECTION */
+section{padding:85px 0}
+.section-heading{text-align:center;margin-bottom:42px}
+.section-heading small{
+ color:#b77725;letter-spacing:3px;
+ font-weight:800;font-size:11px;
+}
+.section-heading h2{
+ font-family:'Playfair Display',serif;
+ font-size:clamp(32px,5vw,45px);margin:12px 0;
+}
+.section-heading p{color:#786d63;font-size:14px}
+
+/* ABOUT */
+.about-grid{
+ display:grid;grid-template-columns:1fr 1fr;
+ gap:55px;align-items:center;
+}
+.about-image{
+ height:440px;border-radius:12px;overflow:hidden;
+ position:relative;
+}
+.about-image img{width:100%;height:100%;object-fit:cover}
+.about-tag{
+ position:absolute;bottom:20px;left:20px;
+ background:var(--gold);padding:16px 20px;
+ font-weight:800;border-radius:5px;
+}
+.about-text h2{
+ font-family:'Playfair Display',serif;
+ font-size:42px;margin-bottom:20px;
+}
+.about-text p{color:#74685d;line-height:1.9;margin-bottom:18px}
+.check{margin:13px 0;font-size:14px;font-weight:600}
+
+/* MENU */
+.menu-section{background:#f2e9dc}
+.filters{
+ display:flex;justify-content:center;
+ flex-wrap:wrap;gap:10px;margin-bottom:35px;
+}
+.filter{
+ padding:10px 19px;border:1px solid #d9c9b5;
+ border-radius:30px;background:transparent;
+ color:#4c3a2b;font-size:12px;font-weight:700;
+}
+.filter.active,.filter:hover{
+ background:var(--dark);color:white;border-color:var(--dark);
+}
+.menu-grid{
+ display:grid;grid-template-columns:repeat(3,1fr);gap:25px;
+}
+.food-card{
+ background:white;border-radius:10px;overflow:hidden;
+ box-shadow:0 5px 25px #4a2e1710;
+ transition:.3s;
+}
+.food-card:hover{transform:translateY(-7px)}
+.food-card img{
+ width:100%;height:220px;object-fit:cover;
+ display:block;
+}
+.food-info{padding:20px}
+.food-info h3{font-size:18px;margin-bottom:8px}
+.food-info p{font-size:12px;color:#81766d;line-height:1.6;min-height:38px}
+.food-bottom{
+ display:flex;justify-content:space-between;
+ align-items:center;margin-top:17px;
+}
+.food-price{font-weight:800;color:#a66b1d;font-size:13px}
+.order-link{
+ background:var(--dark);color:white;
+ padding:10px 15px;border-radius:4px;
+ font-size:11px;font-weight:800;
+}
+.menu-disclaimer{
+ text-align:center;color:#85776b;
+ font-size:12px;margin-top:25px;
+}
+
+/* SPECIAL */
+.special{
+ background:var(--dark);color:white;
+ text-align:center;
+}
+.special h2{
+ font-family:'Playfair Display',serif;
+ font-size:42px;margin:15px 0;
+}
+.special p{color:#c5b6a7;line-height:1.8}
+.special .btn{margin-top:25px}
+
+/* GALLERY */
+.gallery-grid{
+ display:grid;grid-template-columns:repeat(4,1fr);
+ grid-auto-rows:190px;gap:12px;
+}
+.gallery-grid img{
+ width:100%;height:100%;object-fit:cover;
+ border-radius:8px;transition:.3s;
+}
+.gallery-grid img:hover{transform:scale(1.025)}
+.gallery-grid .large{grid-column:span 2;grid-row:span 2}
+
+/* LOCATION */
+.location-section{background:#f2e9dc}
+.location-grid{
+ display:grid;grid-template-columns:1fr 1fr;gap:35px;
+}
+.location-details{
+ background:white;padding:35px;border-radius:10px;
+}
+.location-details h3{
+ font-family:'Playfair Display',serif;
+ font-size:29px;margin-bottom:20px;
+}
+.location-row{display:flex;gap:15px;margin:23px 0}
+.location-row .emoji{font-size:23px}
+.location-row strong{font-size:14px}
+.location-row p{font-size:12px;color:#81766d;margin-top:5px;line-height:1.6}
+.map-frame{
+ border:0;width:100%;height:100%;min-height:360px;
+ border-radius:10px;
+}
+
+/* FOOTER */
+footer{background:#130d08;color:white;padding:55px 0 20px}
+.footer-grid{
+ display:grid;grid-template-columns:2fr 1fr 1fr;
+ gap:35px;margin-bottom:40px;
+}
+footer h3{color:var(--gold);margin-bottom:15px}
+footer p,footer a{color:#b7a99b;font-size:13px;line-height:2}
+footer a:hover{color:var(--gold)}
+.copyright{
+ border-top:1px solid #ffffff20;
+ padding-top:20px;text-align:center;
+ font-size:11px;color:#938477;
+}
+.whatsapp-float{
+ position:fixed;bottom:22px;right:20px;
+ background:#20c76b;color:white;
+ width:58px;height:58px;border-radius:50%;
+ display:grid;place-items:center;
+ font-size:28px;z-index:200;
+ box-shadow:0 5px 20px #0003;
+}
+
+@media(max-width:800px){
+ .nav-links{display:none}
+ .hero{min-height:560px}
+ .info-grid{grid-template-columns:1fr;gap:22px}
+ .about-grid,.location-grid{grid-template-columns:1fr}
+ .about-image{height:320px}
+ .menu-grid{grid-template-columns:repeat(2,1fr)}
+ .gallery-grid{grid-template-columns:repeat(2,1fr)}
+ .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+ .logo strong{font-size:13px}
+ .nav-btn{padding:10px 13px;font-size:10px}
+ .hero-content{padding:80px 0}
+ section{padding:65px 0}
+ .menu-grid{grid-template-columns:1fr}
+ .food-card img{height:230px}
+ .gallery-grid{grid-auto-rows:145px}
+ .footer-grid{grid-template-columns:1fr}
+ .special h2{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <div class="container nav">
+  <a href="#" class="logo">
+   <div class="logo-icon">🍽</div>
+   <div>
+    <strong>AMAZON KAKAMEGA</strong>
+    <small>RESTAURANT</small>
+   </div>
+  </a>
+  <nav class="nav-links">
+   <a href="#home">Home</a>
+   <a href="#about">About</a>
+   <a href="#menu">Our Menu</a>
+   <a href="#gallery">Gallery</a>
+   <a href="#contact">Contact</a>
+  </nav>
+  <a class="nav-btn" href="https://wa.me/254711592174">ORDER NOW</a>
+ </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="container">
+  <div class="hero-content">
+   <div class="eyebrow">WELCOME TO AMAZON KAKAMEGA</div>
+   <h1>Good Food.<br><span>Great Moments.</span></h1>
+   <p>
+    Discover delicious food, refreshing drinks and a welcoming
+    atmosphere. Whenever hunger calls, we're ready to serve.
+   </p>
+   <div class="hero-actions">
+    <a href="#menu" class="btn btn-gold">EXPLORE OUR MENU →</a>
+    <a href="https://wa.me/254711592174" class="btn btn-outline">ORDER ON WHATSAPP</a>
+   </div>
+   <div class="hero-note">✦ OPEN 24 HOURS · KAKAMEGA TOWN</div>
+  </div>
+ </div>
+</section>
+
+<div class="info-bar">
+ <div class="container info-grid">
+  <div class="info-item">
+   <span class="info-icon">🕒</span>
+   <div><strong>OPEN 24 HOURS</strong><small>Available day and night</small></div>
+  </div>
+  <div class="info-item">
+   <span class="info-icon">📍</span>
+   <div><strong>CONVENIENT LOCATION</strong><small>Canon Awori Street, Kakamega</small></div>
+  </div>
+  <div class="info-item">
+   <span class="info-icon">📞</span>
+   <div><strong>CALL US</strong><small>0711 592 174</small></div>
+  </div>
+ </div>
+</div>
+
+<section id="about">
+ <div class="container about-grid">
+  <div class="about-image">
+   <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1000&q=85" alt="Delicious grilled food">
+   <div class="about-tag">🍴 Delicious Every Day</div>
+  </div>
+  <div class="about-text">
+   <div class="eyebrow">ABOUT OUR RESTAURANT</div>
+   <h2>Welcome to Amazon Kakamega</h2>
+   <p>
+    Looking for somewhere to enjoy good food in Kakamega?
+    Amazon Kakamega Restaurant welcomes you to enjoy a
+    selection of tasty meals and refreshing drinks.
+   </p>
+   <p>
+    Whether you're stopping by for breakfast, lunch, dinner
+    or a late-night meal, we're here around the clock.
+   </p>
+   <div class="check">✓ Open 24 hours</div>
+   <div class="check">✓ Food and refreshing drinks</div>
+   <div class="check">✓ Convenient Kakamega town location</div>
+   <a href="tel:0711592174" class="btn btn-gold" style="margin-top:18px">CALL THE RESTAURANT</a>
+  </div>
+ </div>
+</section>
+
+<section class="menu-section" id="menu">
+ <div class="container">
+  <div class="section-heading">
+   <small>EXPLORE OUR SELECTION</small>
+   <h2>Discover Our Menu</h2>
+   <p>A selection of delicious food inspiration for every appetite.</p>
+  </div>
+
+  <div class="filters">
+   <button class="filter active" data-filter="all">All Foods</button>
+   <button class="filter" data-filter="meals">Main Meals</button>
+   <button class="filter" data-filter="chicken">Chicken</button>
+   <button class="filter" data-filter="snacks">Snacks</button>
+   <button class="filter" data-filter="drinks">Drinks</button>
+  </div>
+
+  <div class="menu-grid" id="foodGrid">
+
+   <article class="food-card" data-category="meals">
+    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=85" alt="Rice and vegetable meal">
+    <div class="food-info">
+     <h3>Special Rice Meal</h3>
+     <p>A delicious rice meal served with tasty accompaniments.</p>
+     <div class="food-bottom"><span class="food-price">Ask for price</span><a class="order-link" href="https://wa.me/254711592174?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20rice%20meal.">ENQUIRE</a></div>
+    </div>
+   </article>
+
+   <article class="food-card" data-category="chicken">
+    <img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=700&q=85" alt="Grilled chicken">
+    <div class="food-info">
+     <h3>Grilled Chicken</h3>
+     <p>Flavorful chicken prepared for a satisfying meal.</p>
+     <div class="food-bottom"><span class="food-price">Ask for price</span><a class="order-link" href="https://wa.me/254711592174?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20chicken.">ENQUIRE</a></div>
+    </div>
+   </article>
+
+   <article class="food-card" data-category="meals">
+    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=700&q=85" alt="Fresh vegetable salad">
+    <div class="food-info">
+     <h3>Fresh Salad</h3>
+     <p>Fresh ingredients combined for a colorful bite.</p>
+     <div class="food-bottom"><span class="food-price">Ask for price</span><a class="order-link" href="https://wa.me/254711592174?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20salad.">ENQUIRE</a></div>
+    </div>
+   </article>
+
+   <article class="food-card" data-category="snacks">
+    <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=700&q=85" alt="Crispy fries">
+    <div class="food-info">
+     <h3>Crispy Fries</h3>
+     <p>Golden, crispy and delicious potato fries.</p>
+     <div class="food-bottom"><span class="food-price">Ask for price</span><a class="order-link" href="https://wa.me/254711592174?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20fries.">ENQUIRE</a></div>
+    </div>
+   </article>
+
+   <article class="food-card" data-category="meals">
+    <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=700&q=85" alt="Rice meal">
+    <div class="food-info">
+     <h3>Special Pilau</h3>
+     <p>Aromatic rice dish inspired by East African cuisine.</p>
+     <div class="food-bottom"><span class="food-price">Ask for price</span><a class="order-link" href="https://wa.me/254711592174?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20pilau.">ENQUIRE</a></div>
+    </div>
+   </article>
+
+   <article class="food-card" data-category="chicken">
+    <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=700&q=85" alt="Fried chicken">
+    <div class="food-info">
+     <h3>Crispy Chicken</h3>
+     <p>Crunchy chicken for a delicious treat.</p>
+     <div class="food-bottom"><span class="food-price">Ask for price</span><a class="order-link" href="https://wa.me/254711592174?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20fried%20chicken.">ENQUIRE</a></div>
+    </div>
+   </article>
+
+   <article class="food-card" data-category="meals">
+    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=700&q=85" alt="Vegetable dish">
+    <div class="food-info">
+     <h3>Vegetable Special</h3>
+     <p>A colorful selection of fresh vegetables.</p>
+     <div class="food-bottom"><span class="food-price">Ask for price</span><a class="order-link" href="https://wa.me/254711592174?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20vegetables.">ENQUIRE</a></div>
+    </div>
+   </article>
+
+   <article class="food-card" data-category="drinks">
+    <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=700&q=85" alt="Refreshing drinks">
+    <div class="food-info">
+     <h3>Refreshing Drinks</h3>
+     <p>Enjoy a refreshing drink with your meal.</p>
+     <div class="food-bottom"><span class="food-price">Ask for price</span><a class="order-link" href="https://wa.me/254711592174?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20drinks.">ENQUIRE</a></div>
+    </div>
+   </article>
+
+   <article class="food-card" data-category="snacks">
+    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=700&q=85" alt="Pizza">
+    <div class="food-info">
+     <h3>Special Treat</h3>
+     <p>A tasty treat for those moments when hunger strikes.</p>
+     <div class="food-bottom"><span class="food-price">Ask for price</span><a class="order-link" href="https://wa.me/254711592174?text=Hello%2C%20please%20share%20your%20snacks%20menu.">ENQUIRE</a></div>
+    </div>
+   </article>
+
+  </div>
+  <p class="menu-disclaimer">Menu images are illustrative. Please contact the restaurant to confirm available dishes and prices.</p>
+ </div>
+</section>
+
+<section class="special">
+ <div class="container">
+  <div class="eyebrow">HUNGRY RIGHT NOW?</div>
+  <h2>We're Open Around The Clock!</h2>
+  <p>Day or night, Amazon Kakamega Restaurant is ready to welcome you.</p>
+  <a href="tel:0711592174" class="btn btn-gold">📞 CALL 0711 592 174</a>
+ </div>
+</section>
+
+<section id="gallery">
+ <div class="container">
+  <div class="section-heading">
+   <small>FOOD INSPIRATION</small>
+   <h2>A Taste of Good Food</h2>
+   <p>Explore delicious food photography.</p>
+  </div>
+  <div class="gallery-grid">
+   <img class="large" src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1000&q=85" alt="Grilled food">
+   <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=85" alt="Rice meal">
+   <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=600&q=85" alt="French fries">
+   <img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=600&q=85" alt="Chicken">
+   <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=600&q=85" alt="Drinks">
+  </div>
+ </div>
+</section>
+
+<section class="location-section" id="contact">
+ <div class="container">
+  <div class="section-heading">
+   <small>COME VISIT US</small>
+   <h2>Find Amazon Kakamega</h2>
+   <p>We look forward to welcoming you.</p>
+  </div>
+
+  <div class="location-grid">
+   <div class="location-details">
+    <h3>Get In Touch</h3>
+    <div class="location-row">
+     <span class="emoji">📍</span>
+     <div><strong>Our Location</strong><p>Canon Awori Street, next to Kenya Women Finance Trust, Kakamega, Kenya.</p></div>
+    </div>
+    <div class="location-row">
+     <span class="emoji">📞</span>
+     <div><strong>Phone Number</strong><p><a href="tel:0711592174">0711 592 174</a></p></div>
+    </div>
+    <div class="location-row">
+     <span class="emoji">🕒</span>
+     <div><strong>Opening Hours</strong><p>Open 24 hours, as provided by the restaurant listing.</p></div>
+    </div>
+    <a class="btn btn-gold" href="https://maps.app.goo.gl/GtEKmXYnjHYs4Jz37?g_st=awb">GET DIRECTIONS →</a>
+    <a class="btn" style="background:#eee8df;margin-top:10px" href="https://wa.me/254711592174">CHAT ON WHATSAPP</a>
+   </div>
+
+   <iframe class="map-frame"
+    src="https://maps.google.com/maps?q=Canon%20Awori%20Street%2C%20Kakamega%2C%20Kenya&t=&z=16&ie=UTF8&iwloc=&output=embed"
+    loading="lazy" allowfullscreen
+    title="Map showing Amazon Kakamega Restaurant area">
+   </iframe>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container">
+  <div class="footer-grid">
+   <div>
+    <h3>AMAZON KAKAMEGA</h3>
+    <p>Good food, refreshing drinks and welcoming service in Kakamega. Your food destination, day and night.</p>
+   </div>
+   <div>
+    <h3>Quick Links</h3>
+    <p><a href="#home">Home</a></p>
+    <p><a href="#about">About Us</a></p>
+    <p><a href="#menu">Our Menu</a></p>
+    <p><a href="#gallery">Gallery</a></p>
+   </div>
+   <div>
+    <h3>Contact</h3>
+    <p>Canon Awori Street</p>
+    <p>Kakamega, Kenya</p>
+    <p><a href="tel:0711592174">0711 592 174</a></p>
+    <p><a href="https://wa.me/254711592174">WhatsApp Us</a></p>
+   </div>
+  </div>
+  <div class="copyright">
+   © <span id="year"></span> Amazon Kakamega Restaurant. All rights reserved.
+  </div>
+ </div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/254711592174" aria-label="WhatsApp">☏</a>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const filters = document.querySelectorAll('.filter');
+const cards = document.querySelectorAll('.food-card');
+
+filters.forEach(button => {
+ button.addEventListener('click', () => {
+  filters.forEach(f => f.classList.remove('active'));
+  button.classList.add('active');
+
+  const category = button.dataset.filter;
+
+  cards.forEach(card => {
+   card.style.display =
+    category === 'all' || card.dataset.category === category
+    ? '' : 'none';
+  });
+ });
+});
+</script>
+
+</body>
+</html>
